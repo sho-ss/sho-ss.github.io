@@ -6,7 +6,97 @@
     <description>Recent content in SHO SHIMOYAMA on SHO SHIMOYAMA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 11 Mar 2019 13:05:19 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Understanding and Simplifying One-Shot Architecture Search まとめ</title>
+      <link>https://sho-ss.github.io/post/understand_oneshot/my-article-name/</link>
+      <pubDate>Mon, 11 Mar 2019 13:05:19 +0900</pubDate>
+      
+      <guid>https://sho-ss.github.io/post/understand_oneshot/my-article-name/</guid>
+      <description>
+
+&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://proceedings.mlr.press/v80/bender18a/bender18a.pdf&#34; target=&#34;_blank&#34;&gt;論文へのリンク&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;モチベーション&#34;&gt;モチベーション&lt;/h1&gt;
+
+&lt;p&gt;one-shot architecture searchにおける重み共有について分析したい．
+重み共有では構造間で重みを共有して学習を行うが，
+様々な構造に対して同一の重み集合を利用してなぜ上手くいくのか．&lt;/p&gt;
+
+&lt;h1 id=&#34;概要&#34;&gt;概要&lt;/h1&gt;
+
+&lt;p&gt;モデルはCNNを用いている．
+探索空間内の操作を全て含んだone-shotモデルを学習する．
+これは，重み共有を用いた学習と同じである．
+ここで操作とは 1$\times$1conv や 3$\times$3conv，maxpool などである．
+本項ではこれを large one-shot モデルと記す．
+学習後の large one-shot モデルから操作のいくつかを取り除き，予測精度の変化を計測する．&lt;/p&gt;
+
+&lt;p&gt;以下の図のように操作を全て含んだモデルを学習する．
+&lt;img src=&#34;archi.png&#34; alt=&#34;学習するモデルのイメージ&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;先行研究との差&#34;&gt;先行研究との差&lt;/h1&gt;
+
+&lt;p&gt;MorphNetはフィルタサイズを対象としている．
+一方，提案手法は操作の枝狩りやスキップコネクションに焦点を当てている．&lt;/p&gt;
+
+&lt;h1 id=&#34;データセット&#34;&gt;データセット&lt;/h1&gt;
+
+&lt;p&gt;CIFAR-10とImageNetを使用．&lt;/p&gt;
+
+&lt;h1 id=&#34;結果&#34;&gt;結果&lt;/h1&gt;
+
+&lt;h2 id=&#34;weight-sharing-の役割に対する洞察&#34;&gt;weight sharing の役割に対する洞察&lt;/h2&gt;
+
+&lt;p&gt;構造をサンプリングして，large one-shot モデルから対応する構造を持つモデルを得る．
+このモデルを単に one-shot モデルと記す．
+サンプリングした構造を持つ，一から学習したモデルがstand-aloneモデル．&lt;/p&gt;
+
+&lt;p&gt;Figure5は，one-shot モデルと stand-alone モデルの精度の関係を表している．
+one-shot において精度の高い構造は一から学習しても精度が高くなっており，large one-shot は「構造の良さ」を学習できていると考えられる．
+また，one-shot における精度差と stand-alone における精度差から，large one-shot は精度への影響が大きい操作の欠落に対して敏感であると思われる．&lt;/p&gt;
+
+&lt;p&gt;この結果から，「重み共有は操作が性能に与える影響をモデルに識別させる役割がある」と仮定する．&lt;/p&gt;
+
+&lt;p&gt;上述の仮定を示すために，探索空間内のほぼ全ての操作が有効になっている構造 (参照構造) の予測分布と
+一部の操作のみが有効になっている構造 (候補構造) の予測分布の間で symmetric KL-divergence を計測する．
+論文ではクラス分類を対象としているためモデルの出力は確率分布とみなせる．&lt;/p&gt;
+
+&lt;p&gt;Figure6は，サンプリングした各構造の精度，それらの構造と参照構造との KL-divergence の関係を表している．
+精度が高い構造の予測分布は参照構造の予測分布と近しくなることが確認できる．
+つまり，large one-shot モデルはどの操作が予測性能への影響が大きいかを学習していると考えることができる．&lt;/p&gt;
+
+&lt;p&gt;以上から，重み共有は操作が性能に与える影響をモデルに識別させる役割があると考える．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;oneshot_stand.png&#34; alt=&#34;Figure5&#34; /&gt;
+&lt;img src=&#34;oneshot_kl.png&#34; alt=&#34;Figure6&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;手法の性能&#34;&gt;手法の性能&lt;/h2&gt;
+
+&lt;p&gt;Table1 は提案手法 (One-Shot Top, One-Shot Small)と one-shot 学習の枠組みで捉えられる既存手法 (SMASH, ENAS)，ランダムサーチ (Random)
+それぞれの結果を比較したものである．&lt;/p&gt;
+
+&lt;p&gt;One-Shot Top はランダムにサンプリングした構造の中で large one-shot において良好な性能を示した上位 10 の構造を用いて，
+最初の畳み込み層にサイズ$F$のフィルターを追加して一から学習したモデルである．&lt;/p&gt;
+
+&lt;p&gt;One-Shot Small はサンプリングした構造の内 large one-shot での精度が閾値を超えた構造の中で最小のパラメータ数を持つ構造を用いて，
+最初の畳み込み層にサイズ$F$のフィルターを追加して一から学習したモデルである．&lt;/p&gt;
+
+&lt;p&gt;All On は全ての操作を含んだ構造を用いて，最初の畳み込み層にサイズ$F$のフィルターを追加して一から学習したモデルである．&lt;/p&gt;
+
+&lt;p&gt;Top，Small と比べると All on は精度差が1%であるが，パラメータ数は大幅に増加している．
+このことから，architecture search は精度への影響が弱い操作の枝狩りとみなすことができる．&lt;/p&gt;
+
+&lt;p&gt;提案手法は SMASH や Cell search 以外のすべての ENAS 手法と競合している．
+これは one-shot 学習では hypernet work や controller を必要としないことを示唆している．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;table1.png&#34; alt=&#34;Table1&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
   </channel>
 </rss>
