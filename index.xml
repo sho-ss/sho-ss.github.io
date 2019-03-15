@@ -72,8 +72,24 @@ one-shot において精度の高い構造は一から学習しても精度が�
 
 &lt;p&gt;以上から，重み共有は操作が性能に与える影響をモデルに識別させる役割があると考える．&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../oneshot_stand.png&#34; width=70%&gt;
-&lt;img src=&#34;../oneshot_kl.png&#34; width=70%&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+&lt;figure class=&#34;left&#34;&gt;
+
+&lt;img src=&#34;../oneshot_stand.png&#34; width=&#34;70%&#34; /&gt;
+
+
+&lt;/figure&gt;
+
+
+
+&lt;figure class=&#34;right&#34;&gt;
+
+&lt;img src=&#34;../oneshot_kl.png&#34; width=&#34;70%&#34; /&gt;
+
+
+&lt;/figure&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;手法の性能&#34;&gt;手法の性能&lt;/h2&gt;
 
@@ -94,7 +110,15 @@ one-shot において精度の高い構造は一から学習しても精度が�
 &lt;p&gt;提案手法は SMASH や Cell search 以外のすべての ENAS 手法と競合している．
 これは one-shot 学習では hypernet work や controller を必要としないことを示唆している．&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../table1.png&#34; width=70%&gt;&lt;/p&gt;
+
+
+
+&lt;figure class=&#34;left&#34;&gt;
+
+&lt;img src=&#34;../table1.png&#34; width=&#34;70%&#34; /&gt;
+
+
+&lt;/figure&gt;
 </description>
     </item>
     
