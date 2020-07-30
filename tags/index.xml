@@ -6,10 +6,19 @@
     <description>Recent content in Tags on SHO SHIMOYAMA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Mar 2019 13:05:19 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 22 Mar 2019 12:19:50 +0900</lastBuildDate>
     
 	<atom:link href="https://sho-ss.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GPML</title>
+      <link>https://sho-ss.github.io/tags/gpml/</link>
+      <pubDate>Fri, 22 Mar 2019 12:19:50 +0900</pubDate>
+      
+      <guid>https://sho-ss.github.io/tags/gpml/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>NAS</title>

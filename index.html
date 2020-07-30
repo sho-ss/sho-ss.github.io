@@ -29,7 +29,7 @@
   
     
   
-  <meta name="description" content="Student in Master course (M1)">
+  <meta name="description" content="">
 
   
   <link rel="alternate" hreflang="en-us" href="https://sho-ss.github.io/">
@@ -121,10 +121,10 @@
   <meta property="og:site_name" content="SHO SHIMOYAMA">
   <meta property="og:url" content="https://sho-ss.github.io/">
   <meta property="og:title" content="SHO SHIMOYAMA">
-  <meta property="og:description" content="Student in Master course (M1)"><meta property="og:image" content="https://sho-ss.github.io/img/icon-192.png">
+  <meta property="og:description" content=""><meta property="og:image" content="https://sho-ss.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="og:updated_time" content="2019-03-11T13:05:19&#43;09:00">
+  <meta property="og:updated_time" content="2019-03-22T12:19:50&#43;09:00">
   
 
   
@@ -244,25 +244,6 @@
         
         
 
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/#accomplishments" data-target="#accomplishments">
-            
-            <span>Accomplishments</span>
-            
-          </a>
-        </li>
-
-        
-        
-
       
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -336,7 +317,7 @@
 
 
 
-<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person" itemref="person-email person-telephone person-address">
+<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person" itemref="person-email person-telephone">
   <div class="col-12 col-lg-4">
     <div id="profile">
 
@@ -347,12 +328,12 @@
 
       <div class="portrait-title">
         <h2 itemprop="name">Sho Shimoyama (下山 翔)</h2>
-        <h3 itemprop="jobTitle">Student in Master course (M1)</h3>
+        
 
         
         <h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
           
-          <span itemprop="name">Meiji University</span>
+          <span itemprop="name"></span>
           
         </h3>
         
@@ -382,21 +363,6 @@
         
         
         
-        
-        
-        
-        
-          
-        
-        <li>
-          <a itemprop="sameAs" href="/" >
-            <i class="ai ai-google-scholar big-icon"></i>
-          </a>
-        </li>
-        
-        
-        
-        
           
         
         
@@ -420,12 +386,9 @@
     
     <h1>Biography</h1>
 
-    <p>明治大学高木研究室に所属しています．
-研究室の方向とは少し違うのですが，ベイズ推論が凄く好きです．</p>
-
-<p>最近は研究が忙しいのでそちらに忙殺されています笑 (いい意味で笑)．</p>
-
-<p>趣味は，ダンス，洋服，数学です．</p>
+    <p>とある企業でデータサイエンティストをしています．<br />
+学部生・院生のときは様々な研究テーマを浅く拾ってしまっていたので，向こう数年は一つの領域をしっかり勉強したいと思っています．
+このブログでは，自分が勉強した内容をまとめていきます．</p>
 
 
     <div class="row">
@@ -439,7 +402,9 @@
           
           <li>Information Geometry</li>
           
-          <li>Statistics</li>
+          <li>Manifold</li>
+          
+          <li>Differential Geometry</li>
           
         </ul>
       </div>
@@ -558,7 +523,6 @@
 
 
 
-
   
 
 
@@ -568,25 +532,103 @@
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="media-body">
+<div class="card-simple" itemscope itemtype="http://schema.org/BlogPosting">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/understand_oneshot/my-article-name/" itemprop="url">Understanding and Simplifying One-Shot Architecture Search まとめ</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      はじめに 論文へのリンク モチベーション one-shot architecture searchにおける重み共有について分析したい． 重み共有では構造間で重みを共有して学習を行うが， 様々
-    </div>
+  
     
 
-    <div class="stream-meta article-metadata">
+
+
+<meta content="2019-03-22 12:19:50 &#43;0900 JST" itemprop="datePublished">
+<meta content="2019-03-22 12:19:50 &#43;0900 JST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2019-03-22</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/gpml/">GPML</a>
+    
+  </span>
+  
+  
+
+  
+
+</div>
+
+  
+
+  
+  
+  
+
+  <h3 class="article-title mb-1 mt-3" itemprop="name">
+    <a href="/post/gpml/section2/" itemprop="url">Section2 answer</a>
+  </h3>
+
+  
+  <div class="article-style" itemprop="articleBody">
+    問1 Squared Exponential Kernel を用いたGPの事前分布と事後分布からサンプルした関数をプロットせよ． Squared Exponential Kernelの式は以下で定義される． $$ K(\mathbf{x}_{p}, \mathbf{x}_{q}) = \exp(-\frac{1}{2} | \mathbf{x}_{p} - \mathbf{x}_{q} |^2) $$
+  </div>
+  
+
+  
+
+</div>
 
       
-
+    
       
         
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="card-simple" itemscope itemtype="http://schema.org/BlogPosting">
+
+  
+    
 
 
 
@@ -604,7 +646,7 @@
     
       
     
-    <time>Mar 11, 2019</time>
+    <time>2019-03-11</time>
   </span>
   
 
@@ -637,16 +679,24 @@
 
 </div>
 
-      
-    </div>
+  
 
-    
+  
+  
+  
 
+  <h3 class="article-title mb-1 mt-3" itemprop="name">
+    <a href="/post/understand_oneshot/my-article-name/" itemprop="url">Understanding and Simplifying One-Shot Architecture Search まとめ</a>
+  </h3>
+
+  
+  <div class="article-style" itemprop="articleBody">
+    はじめに 論文へのリンク モチベーション one-shot architecture searchにおける重み共有について分析したい． 重み共有では構造間で重みを共有して学習を行うが， 様々
   </div>
-  <div class="ml-3">
-    
-    
-  </div>
+  
+
+  
+
 </div>
 
       
@@ -704,7 +754,7 @@
           <div class="col">&nbsp;</div>
         </div>
         <div class="m-2">
-          <span class="badge badge-pill border exp-fill">&nbsp;</span>
+          <span class="badge badge-pill border ">&nbsp;</span>
         </div>
         <div class="row h-50">
           <div class="col border-right">&nbsp;</div>
@@ -719,7 +769,7 @@
               <div class="text-right">
                 November 2018 –
                 
-                  Present
+                  June 2019
                 
               </div>
               
@@ -728,7 +778,7 @@
             </div>
             <h4 class="card-title exp-title text-muted mt-0 mb-1">インターン</h4>
             <h4 class="card-title exp-company text-muted my-0">CyberAgent</h4>
-            
+            <div class="card-text">研究インターン．ベイズ最適化における代理モデルの性能比較</div>
           </div>
         </div>
       </div>
@@ -765,7 +815,7 @@
               
             </div>
             <h4 class="card-title exp-title text-muted mt-0 mb-1">インターン</h4>
-            <h4 class="card-title exp-company text-muted my-0"><a href="https://adtech.cyberagent.io/" target="_blank" rel="noopener">CyberAgent</a></h4>
+            <h4 class="card-title exp-company text-muted my-0">CyberAgent</h4>
             <div class="card-text">長期インターン．分散表現の研究</div>
           </div>
         </div>
@@ -856,7 +906,7 @@
           <div class="col">&nbsp;</div>
         </div>
         <div class="m-2">
-          <span class="badge badge-pill border exp-fill">&nbsp;</span>
+          <span class="badge badge-pill border ">&nbsp;</span>
         </div>
         <div class="row h-50">
           <div class="col border-right">&nbsp;</div>
@@ -871,7 +921,7 @@
               <div class="text-right">
                 April 2018 –
                 
-                  Present
+                  March 2020
                 
               </div>
               
@@ -919,112 +969,6 @@
             <h4 class="card-title exp-title text-muted mt-0 mb-1">学部生</h4>
             <h4 class="card-title exp-company text-muted my-0">明治大学 理工学部 情報科学科</h4>
             <div class="card-text">深層強化学習を用いた推薦アイテム最適化の研究に注力</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    
-  </div>
-</div>
-
-    </div>
-  </section>
-  
-
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-  <section id="accomplishments" class="home-section wg-accomplishments   " >
-    <div class="container">
-      
-
-
-
-<div class="row">
-  <div class="col-12 col-lg-4 section-heading">
-    <h1>Accomplish&shy;ments</h1>
-    
-  </div>
-  <div class="col-12 col-lg-8">
-    
-
-    
-    
-    <div class="row experience">
-      
-      <div class="col py-2">
-        <div class="card course">
-          <div class="card-body">
-            <div class="float-right text-muted exp-meta">
-              <div class="text-right">
-                Sep 2018
-                
-                – Sep 2018
-                
-              </div>
-              <div class="text-right">
-                
-                <h6 class="card-title exp-company text-muted my-0">
-                  <a href="https://developers.cyberagent.co.jp/blog/archives/18636/" target="_blank" rel="noopener">
-                    See certificate
-                  </a>
-                </h6>
-                
-              </div>
-            </div>
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">アドテクコンペ メンター特別賞受賞</h4>
-            <h4 class="card-title exp-company text-muted my-0">
-                CyberAgent
-              </h4>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row experience">
-      
-      <div class="col py-2">
-        <div class="card course">
-          <div class="card-body">
-            <div class="float-right text-muted exp-meta">
-              <div class="text-right">
-                Jan 2018
-                
-                – Jan 2018
-                
-              </div>
-              <div class="text-right">
-                
-                <h6 class="card-title exp-company text-muted my-0">
-                  <a href="https://recruit-tech.co.jp/blog/2018/01/30/nlp_hackathon4/" target="_blank" rel="noopener">
-                    See certificate
-                  </a>
-                </h6>
-                
-              </div>
-            </div>
-            <h4 class="card-title exp-title text-muted mt-0 mb-1">第4回リクルート自然言語処理ハッカソン 最優秀賞受賞</h4>
-            <h4 class="card-title exp-company text-muted my-0">
-                Recruit
-              </h4>
-            
           </div>
         </div>
       </div>

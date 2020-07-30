@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
@@ -30,10 +28,10 @@
   
     
   
-  <meta name="description" content="">
+  <meta name="description" content="問1 Squared Exponential Kernel を用いたGPの事前分布と事後分布からサンプルした関数をプロットせよ． Squared Exponential Kernelの式は以下で定義される． $$ K(\mathbf{x}_{p}, \mathbf{x}_{q}) = \exp(-\frac{1}{2} | \mathbf{x}_{p} - \mathbf{x}_{q} |^2) $$">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://sho-ss.github.io/tags/%E8%AB%96%E6%96%87/">
+  <link rel="alternate" hreflang="en-us" href="https://sho-ss.github.io/post/gpml/section2/">
 
   
 
@@ -100,15 +98,15 @@
   
 
   
-  <link rel="alternate" href="https://sho-ss.github.io/tags/%E8%AB%96%E6%96%87/index.xml" type="application/rss+xml" title="SHO SHIMOYAMA">
-  <link rel="feed" href="https://sho-ss.github.io/tags/%E8%AB%96%E6%96%87/index.xml" type="application/rss+xml" title="SHO SHIMOYAMA">
+  <link rel="alternate" href="https://sho-ss.github.io/index.xml" type="application/rss+xml" title="SHO SHIMOYAMA">
+  <link rel="feed" href="https://sho-ss.github.io/index.xml" type="application/rss+xml" title="SHO SHIMOYAMA">
   
 
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://sho-ss.github.io/tags/%E8%AB%96%E6%96%87/">
+  <link rel="canonical" href="https://sho-ss.github.io/post/gpml/section2/">
 
   
   
@@ -120,19 +118,21 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="SHO SHIMOYAMA">
-  <meta property="og:url" content="https://sho-ss.github.io/tags/%E8%AB%96%E6%96%87/">
-  <meta property="og:title" content="論文 | SHO SHIMOYAMA">
-  <meta property="og:description" content=""><meta property="og:image" content="https://sho-ss.github.io/img/icon-192.png">
+  <meta property="og:url" content="https://sho-ss.github.io/post/gpml/section2/">
+  <meta property="og:title" content="Section2 answer | SHO SHIMOYAMA">
+  <meta property="og:description" content="問1 Squared Exponential Kernel を用いたGPの事前分布と事後分布からサンプルした関数をプロットせよ． Squared Exponential Kernelの式は以下で定義される． $$ K(\mathbf{x}_{p}, \mathbf{x}_{q}) = \exp(-\frac{1}{2} | \mathbf{x}_{p} - \mathbf{x}_{q} |^2) $$"><meta property="og:image" content="https://sho-ss.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="og:updated_time" content="2019-03-11T13:05:19&#43;09:00">
+  <meta property="article:published_time" content="2019-03-22T12:19:50&#43;09:00">
+  
+  <meta property="article:modified_time" content="2019-03-22T12:19:50&#43;09:00">
   
 
   
 
   
 
-  <title>論文 | SHO SHIMOYAMA</title>
+  <title>Section2 answer | SHO SHIMOYAMA</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -273,7 +273,9 @@
 </nav>
 
 
+<article class="article" itemscope itemtype="http://schema.org/Article">
 
+  
 
 
 
@@ -290,37 +292,301 @@
 
   
   
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Section2 answer</h1>
+
+  
+
   
     
-  
-<div class="universal-wrapper pt-3">
-  <h1 itemprop="name">論文</h1>
+
+
+
+<meta content="2019-03-22 12:19:50 &#43;0900 JST" itemprop="datePublished">
+<meta content="2019-03-22 12:19:50 &#43;0900 JST" itemprop="dateModified">
+
+<div class="article-metadata">
 
   
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2019-03-22</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/gpml/">GPML</a>
+    
+  </span>
+  
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Section2%20answer&amp;url=https%3a%2f%2fsho-ss.github.io%2fpost%2fgpml%2fsection2%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fsho-ss.github.io%2fpost%2fgpml%2fsection2%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fsho-ss.github.io%2fpost%2fgpml%2fsection2%2f&amp;title=Section2%20answer"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fsho-ss.github.io%2fpost%2fgpml%2fsection2%2f&amp;title=Section2%20answer"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Section2%20answer&amp;body=https%3a%2f%2fsho-ss.github.io%2fpost%2fgpml%2fsection2%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
 </div>
 
 
 
-<div class="universal-wrapper">
-  
+  <div class="article-container">
 
-  
-  
-  <div>
-    <h2><a href="/post/understand_oneshot/my-article-name/">Understanding and Simplifying One-Shot Architecture Search まとめ</a></h2>
-    <div class="article-style">
+    <div class="article-style" itemprop="articleBody">
       
-      はじめに 論文へのリンク モチベーション one-shot architecture searchにおける重み共有について分析したい． 重み共有では構造間で重みを共有して学習を行うが， 様々
-      
+
+<h1 id="問1">問1</h1>
+
+<p>Squared Exponential Kernel を用いたGPの事前分布と事後分布からサンプルした関数をプロットせよ．
+Squared Exponential Kernelの式は以下で定義される．
+$$
+K(\mathbf{x}_{p}, \mathbf{x}_{q}) = \exp(-\frac{1}{2} | \mathbf{x}_{p} - \mathbf{x}_{q} |^2)
+$$</p>
+
+<h2 id="a">A.</h2>
+
+<pre><code class="language-python">import numpy as np
+from scipy.spatial.distance import cdist
+import matplotlib.pyplot as plt
+
+def squared_exponential(X1, X2):
+    r = cdist(X1, X2)
+    return np.exp( - 0.5 * r**2)
+
+def get_posterior_params(X, Xstar, y):
+    print('X: ', X.shape)
+    print('Xstar: ', Xstar.shape)
+    cov_test_train = squared_exponential(Xstar, X)
+    cov_train = squared_exponential(X, X)
+    cov_test = squared_exponential(Xstar, Xstar)
+    cov_inv = np.linalg.inv(cov_train)
+    
+    term1 = np.dot(cov_test_train, cov_inv)
+    mean = np.dot(term1, y)
+    cov = cov_test - np.dot(term1, np.transpose(cov_test_train))
+    
+    return mean, cov
+
+fig = plt.figure(figsize=(15, 6))
+ax1 = fig.add_subplot(1, 2, 1)
+ax2 = fig.add_subplot(1, 2, 2)
+
+X = np.linspace(-5, 5, 100)
+X_t = X.reshape(-1, 1)
+
+# prior
+cov_matrix = squared_exponential(X_t, X_t)
+Ys = np.random.multivariate_normal(np.zeros(len(cov_matrix)), cov_matrix, size=3)
+cov = np.diag(cov_matrix)
+for Y in Ys:
+    ax1.plot(X, Y)
+mean = np.zeros(len(X))
+ax1.fill_between(X, mean+2*cov, mean-2*cov, alpha=.3, color='gray')
+    
+ax1.set_ylim(-2.3, 2.3)
+ax1.set_xlim(-5, 5)
+ax1.set_xlabel('input, x', fontsize=18)
+ax1.set_ylabel('output, f(x)', fontsize=18)
+ax1.tick_params(labelsize=18)
+
+# posterior
+X_observed = np.array([-4, -3, -1, 0, 2]).reshape(-1, 1)
+Y_observed = np.array([-2, 0, 1, 2, -1]).reshape(-1, 1)
+
+mean, cov = get_posterior_params(X_observed, X_t, Y_observed)
+Ys = np.random.multivariate_normal(mean[:, 0], cov, size=3)
+
+for Y in Ys:
+    ax2.plot(X, Y)
+ax2.scatter(X_observed, Y_observed, marker='+', color='black', s=200)
+cov = np.diag(cov)
+ax2.fill_between(X, mean[:,0]+2*cov, mean[:,0]-2*cov, alpha=.3, color='gray')
+ax2.set_ylim(-2.5, 2.5)
+ax2.set_xlim(-5, 5)
+ax2.set_xlabel('input, x', fontsize=18)
+ax2.set_ylabel('output, f(x)', fontsize=18)
+ax2.tick_params(labelsize=18)
+
+plt.savefig('./log/sample.png', dpi=200)
+</code></pre>
+
     </div>
-  </div>
-  
 
-  
+    
 
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/gpml/">GPML</a>
+  
 </div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  
+  <img class="portrait mr-3" src="/author/admin/avatar_hu894bb7b7e3238f5a73b32bc7c7112a13_77359_250x250_fill_q90_lanczos_center.jpg" itemprop="image" alt="Avatar">
+  
+
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/authors/admin">Sho Shimoyama (下山 翔)</a></h5>
+    
+    <p class="card-text" itemprop="description">My interests include bayesian inference, information geometry and statistics</p>
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/shoshimo_" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/sho-ss" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+      
+      
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
 <div class="container">
   <footer class="site-footer">
   
@@ -474,6 +740,4 @@
 
   </body>
 </html>
-
-
 
