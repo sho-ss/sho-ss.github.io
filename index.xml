@@ -6,8 +6,216 @@
     <description>Recent content in SHO SHIMOYAMA on SHO SHIMOYAMA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Mar 2019 12:19:50 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 02 Aug 2020 14:36:08 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>位相におけるコンパクトとは何か</title>
+      <link>https://sho-ss.github.io/post/math/topology_compact/</link>
+      <pubDate>Sun, 02 Aug 2020 14:36:08 +0900</pubDate>
+      
+      <guid>https://sho-ss.github.io/post/math/topology_compact/</guid>
+      <description>
+
+&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;本稿では，位相空間論の中でコンパクト性に関係する内容を簡単にまとめます．&lt;/p&gt;
+
+&lt;p&gt;「代数幾何と学習理論（渡辺先生 著）」を読んでいる時にコンパクトという単語が前半の章でちょこちょこ出現するのですが，全然イメージがつかず，イメージをつけたいなと思ったのが本稿を作成したきっかけです．&lt;/p&gt;
+
+&lt;p&gt;本文では，可読性向上のため，ですます調からである調に変えます．&lt;/p&gt;
+
+&lt;h1 id=&#34;目次&#34;&gt;目次&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#位相空間の基礎からコンパクトまで&#34;&gt;位相空間の基礎からコンパクトまで&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#開集合形と位相空間&#34;&gt;開集合形と位相空間&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#コンパクト&#34;&gt;コンパクト&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#コンパクトに関する種々の事柄&#34;&gt;コンパクトに関する種々の事柄&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#コンパクトであるでない集合の例&#34;&gt;コンパクトである/でない集合の例&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#コンパクトであることの嬉さ&#34;&gt;コンパクトであることの嬉さ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#参考&#34;&gt;参考&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;位相空間の基礎からコンパクトまで&#34;&gt;位相空間の基礎からコンパクトまで&lt;/h1&gt;
+
+&lt;p&gt;本章では，諸概念の定義をまとめる．
+[1],[2],[5]を参照した．&lt;/p&gt;
+
+&lt;p&gt;なぜそのような概念を考えるのか，それがあると何が嬉しいのかについては次章以降にまとめる．&lt;/p&gt;
+
+&lt;h3 id=&#34;開集合形と位相空間&#34;&gt;開集合形と位相空間&lt;/h3&gt;
+
+&lt;p&gt;$X$ を集合とする．&lt;br /&gt;
+$X$ の部分集合からなる族 $\mathcal{O}$ が開集合形であるとは次の3条件が成り立つことである．&lt;br /&gt;
+1) $\mathcal{O}$ の元からなる族 $\{U_{\lambda}\}_{\lambda \in \Lambda}$ ($\Lambda$は添え字集合) について，
+\begin{align}
+\bigcup_{\lambda \in \Lambda} O_\lambda \in \mathcal{O}
+\end{align}
+2) $k\in \mathbb{N}$, $O_1, \ldots, O_k \in \mathcal{O}$ について，
+\begin{align}
+\bigcap_{i =1}^k O_i \in \mathcal{O}
+\end{align}
+3) $\phi$ を空集合とし，
+\begin{align}
+X, \phi \in \mathcal{O}
+\end{align}
+このとき，組 $(X, \mathcal{O})$ を位相空間，$\mathcal{O}$ の元を開集合という．&lt;/p&gt;
+
+&lt;h3 id=&#34;コンパクト&#34;&gt;コンパクト&lt;/h3&gt;
+
+&lt;p&gt;$(X, \mathcal{O})$ を位相空間とする．&lt;br /&gt;
+部分集合 $F \subset X$ がコンパクトであるとは，次が成り立つことである．&lt;br /&gt;
+$\mathcal{O}$ の元からなる族 $\{O_{\lambda}\}_{\lambda \in \Lambda}$ で $F \subset \bigcup_{\lambda \in \Lambda} O_\lambda$ となるものを選んだとき&lt;br /&gt;
+（i.e. $\mathcal{O}$ の元からなる，$F$ の任意の開被覆 $\{O_{\lambda}\}_{\lambda \in \Lambda}$ に対して），&lt;br /&gt;
+ある $k \in \mathbb{N}$ と $\lambda_1, \ldots, \lambda_k$ が存在して，$F \subset \bigcup_{i=1}^k O_{\lambda_i}$ が成り立つ．&lt;/p&gt;
+
+&lt;h1 id=&#34;コンパクトに関する種々の事柄&#34;&gt;コンパクトに関する種々の事柄&lt;/h1&gt;
+
+&lt;p&gt;この章では，コンパクトである/でない集合の具体例，コンパクトという性質が成り立つことの嬉さについてまとめる．
+[3], [4]を参照した．&lt;/p&gt;
+
+&lt;h2 id=&#34;コンパクトである-でない集合の例&#34;&gt;コンパクトである/でない集合の例&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;1)&lt;/strong&gt; $X = \{ \frac{1}{n} | n \in \mathbb{N} \} \cup \{0\}$ はコンパクト．&lt;br /&gt;
+&lt;strong&gt;証明&lt;/strong&gt;： $X$ の任意の開被覆を $\{O_\lambda\}_{\lambda \in \Lambda}$（$O_\lambda \subset \mathbb{R}$）とおく．&lt;br /&gt;
+ある $\lambda_0$ が存在して，$0 \in O_{\lambda_0}$ が成り立つ．&lt;br /&gt;
+$O_{\lambda_0}$ は開集合なので，ある $\delta &amp;gt; 0$ が存在して，$(-\delta, \delta) \subset O_{\lambda_0}$．&lt;br /&gt;
+$k \in \mathcal{N}$ を $\frac{1}{k} &amp;lt; \delta$ となるように取れば，$n \geq k$ に対して，$\frac{1}{n} \in O_{\lambda_0}$．&lt;br /&gt;
+$n \leq k - 1$に対して，各 $n$ に対しある $\lambda_n$ が存在して $\frac{1}{n} \in O_{\lambda_n}$ が成り立つ．&lt;br /&gt;
+したがって，$X$ は有限個の開集合 $O_{\lambda_0}, O_{\lambda_1}, \ldots, O_{\lambda_{k-1}}$ で覆うことができるので，コンパクトである．&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2)&lt;/strong&gt; $\mathbb{R}$はコンパクトでない．&lt;br /&gt;
+&lt;strong&gt;証明&lt;/strong&gt;： $O_r = (-|r|, |r|)$ とすると，$\bigcup_{r \in \mathbb{R}} O_r$ は $\mathbb{R}$ の開被覆である．&lt;br /&gt;
+$\mathbb{R}$ がコンパクトであるとすると，$\mathbb{R} = \bigcup_{i=1}^k O_{r_i}$ となる有限個の開集合 $O_{r_1}, \ldots, O_{r_k}$ が存在する．&lt;br /&gt;
+$k$ は有限なので添え字の最大値が取れて，それを $r&amp;rsquo; = \max \{r_1, \ldots, r_k\}$ とする．&lt;br /&gt;
+このとき，$\mathbb{R} = \bigcup_{i=1}^k O_{r_i} = (-|r&amp;rsquo;|, |r&amp;rsquo;|)$ となり矛盾する．&lt;br /&gt;
+よって，$\mathbb{R}$ はコンパクトでない．&lt;/p&gt;
+
+&lt;h2 id=&#34;コンパクトであることの嬉さ&#34;&gt;コンパクトであることの嬉さ&lt;/h2&gt;
+
+&lt;p&gt;コンパクト集合上の関数に対して次の2つが成り立つ[3]．&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;コンパクト集合上の連続関数は最大値と最小値を持つ&lt;/li&gt;
+&lt;li&gt;コンパクト集合上の連続関数は一様連続である&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また，歴史的な背景としても，閉区間上の関数は一様連続であることを証明するためにコンパクト性が用いられたようである[4]．&lt;/p&gt;
+
+&lt;h3 id=&#34;コンパクト集合上の連続関数は最大値と最小値を持つ-の証明&#34;&gt;「コンパクト集合上の連続関数は最大値と最小値を持つ」の証明&lt;/h3&gt;
+
+&lt;p&gt;$X$ をコンパクトな集合，$X$ 上の実数値連続関数を $f:X \to \mathbb{R}$ とする．&lt;br /&gt;
+\begin{align}
+U_r = f^{-1}\left( ( -|r| - 1, |r| + 1) \right) = \left\{x \in X | f(x) \in ( -|r| - 1, |r| + 1)\right\}
+\end{align}
+とすると，$f$ は連続であるので $U_r$ は開集合である．&lt;br /&gt;
+したがって，$\{U_r\}_{r \in \mathbb{R}}$ は $X$ の開被覆である．&lt;br /&gt;
+$X$ はコンパクトなので，有限個の $U_{r_1}, \ldots, U_{r_k}$ が存在し，$X \subset \bigcup_{i = 1}^k U_{r_i}$ とできる．&lt;br /&gt;
+したがって，
+\begin{align}
+f(X) \subset f\left( \bigcup_{i = 1}^k U_{r_i} \right) = \left( - \max_i |r_i| - 1, \max_i |r_i| + 1 \right)
+\end{align}
+となり，$f(X)$は有界集合である．&lt;/p&gt;
+
+&lt;p&gt;Weierstrassの上限・下限の存在定理から，$f(X)$ は上限 $\sup f(X) = M$ と下限 $\inf f(X) = m$ を持つ．&lt;br /&gt;
+$F_n = f^{-1} \left([M - \frac{1}{n}, M] \right)$ と定義すると，上限の定義から $M - \frac{1}{n} &amp;lt; f(x) \leq M$ を満たす $x \in X$ が存在するので，$F_n \neq \phi$．&lt;br /&gt;
+$f$ は連続関数なので $F_n$ は閉集合である．&lt;br /&gt;
+そして，$F_1 \supset F_2 \supset \cdots \supset F_n$ より，$\bigcap_{i=1}^n F_i \neq \phi$（i.e. 有限交叉性を満たす）．&lt;br /&gt;
+コンパクト集合であることと，閉集合の族 $\{F_n\}_{n \in \mathbb{N}}$ が有限交叉性を満たすならば $\bigcap_{n \in \mathbb{N}} F_n \neq \phi$が成り立つことは同値である（後述）．&lt;br /&gt;
+したがって，任意の $n$ に対して，$M - \frac{1}{n} &amp;lt; f(x) \leq M$ を満たす $x \in X$ が存在するので，$M$ は最大値である．&lt;br /&gt;
+最小値に対しても同様の議論で証明できる．&lt;/p&gt;
+
+&lt;h4 id=&#34;コンパクトと有限交叉性に関して&#34;&gt;コンパクトと有限交叉性に関して&lt;/h4&gt;
+
+&lt;p&gt;次の2つは同値である．&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;$(X, \mathcal{O})$ を位相空間とする．$X$ はコンパクトである．&lt;/li&gt;
+&lt;li&gt;$(X, \mathcal{O})$ を位相空間とする．$(X, \mathcal{O})$ 上の閉集合の族 $\{F\}_{F \in \mathcal{F}}$ が有限性を持つならば $\bigcap_{F \in \mathcal{F}} F \neq \phi$&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;$1 \Rightarrow 2$ の証明&lt;/strong&gt;：$\{F\}_{F \in \mathcal{F}}$ が有限交叉性を持つとする．&lt;br /&gt;
+$\bigcap_{F \in \mathcal{F}} F = \phi$ であるなら，
+\begin{align}
+X = X \setminus \bigcap_{F \in \mathcal{F}} F = \bigcup_{F \in \mathcal{F}} F^c
+\end{align}
+ただし，$F^c = X \setminus F$．&lt;br /&gt;
+$F^c$ は開集合であるので，$\bigcup_{F \in \mathcal{F}} F^c$ は $X$ の開被覆である．&lt;br /&gt;
+$X$ はコンパクトなので，有限個の $F_1^c, \ldots, F_k^c$ が選べて，$X = \bigcup_{i=1}^k F_i^c$ とできる．&lt;br /&gt;
+よって，
+\begin{align}
+\phi = X \setminus \bigcup_{i=1}^k F_i^c = \bigcap_{i=1}^k F_i
+\end{align}
+が成り立つ．&lt;br /&gt;
+これは，$\{F\}_{F \in \mathcal{F}}$ が有限交叉性を持つことと矛盾する．&lt;br /&gt;
+したがって，$\bigcap_{F \in \mathcal{F}} F \neq \phi$．&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;$2 \Rightarrow 1$ の証明&lt;/strong&gt;：$X$ の開被覆を $\{O_\lambda\}_{\lambda \in \Lambda}$ とする．&lt;br /&gt;
+2 が成り立つことから，その対偶も成り立つ．すなわち，$\bigcap_{F \in \mathcal{F}} F = \phi$ なら，ある有限個の閉集合 $F_1, \ldots, F_k$ が存在して，$\bigcap_{i=1}^k F_i = \phi$ とできる．&lt;br /&gt;
+\begin{align}
+\phi = X \setminus \bigcup_{\lambda \in \Lambda} O_\lambda = \bigcap_{\lambda \in \Lambda} O_\lambda^c
+\end{align}
+より，$\bigcap_{i=1}^k O_{\lambda_i}^c = \phi$ となる，ある有限個の $O_{\lambda_1}^c, \ldots, O_{\lambda_k}^c$ が存在する．&lt;br /&gt;
+よって，
+\begin{align}
+X = X \setminus \bigcap_{i=1}^k O_{\lambda_i}^c = \bigcup_{i=1}^k O_{\lambda_i}
+\end{align}
+が成り立つ．&lt;br /&gt;
+∴ $X$ はコンパクトである．&lt;/p&gt;
+
+&lt;h3 id=&#34;コンパクト集合上の連続関数は一様連続である-の証明&#34;&gt;「コンパクト集合上の連続関数は一様連続である」の証明&lt;/h3&gt;
+
+&lt;p&gt;ここでは，距離空間上での証明を行う．&lt;br /&gt;
+位相空間上で一様連続を定義するためには，空間の位相構造だけでは不十分で，一様構造という構造をいれる必要があるらしい．&lt;a href=&#34;http://www12.plala.or.jp/echohta/top/QA/QA010.html#01097&#34; target=&#34;_blank&#34;&gt;参考&lt;/a&gt;．&lt;/p&gt;
+
+&lt;p&gt;$(X, d)$ を距離空間，$U \subset X$ を $X$ のコンパクトな部分集合，$f: U \to \mathbb{R}$ を $U$ 上の実数値連続関数とする．&lt;br /&gt;
+まず，連続関数と一様連続の定義を示す．&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;一様連続&lt;/strong&gt;&lt;br /&gt;
+ある部分集合 $V$ 上の実数値関数 $f: V \to \mathbb{R}$ が一様連続であるとは，次が成り立つことである．&lt;br /&gt;
+$\forall \epsilon &amp;gt; 0$ に対しある $\delta_\epsilon &amp;gt; 0$ が存在して，$d(x, y) &amp;lt; \delta_\epsilon$ を満たす任意の $x, y \in V$ に対して $|f(x) - f(y)| &amp;lt; \delta_\epsilon $ とできる．&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;連続&lt;/strong&gt;&lt;br /&gt;
+ある部分集合 $V$ 上の実数値関数 $f: V \to \mathbb{R}$ が連続であるとは，次が成り立つことである．&lt;br /&gt;
+$\forall x \in V$ と $\forall \epsilon &amp;gt; 0$ に対しある $\delta_{x, \epsilon} &amp;gt; 0$ が存在して，$d(x, y) &amp;lt; \delta_{x, \epsilon}$ を満たす任意の $y \in V$ に対して $|f(x) - f(y)| &amp;lt; \epsilon $ とできる．&lt;/p&gt;
+
+&lt;p&gt;連続は $x$ に依存しているが，一様連続は $x$ と $y$ の距離にのみ依存している．&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;命題の証明&lt;/strong&gt;： 任意の $\epsilon &amp;gt; 0$ と各 $x \in U$ に対して $V_x = \{ y \in U | d(x, y) &amp;lt; \frac{1}{2} \delta_{x, \epsilon} \}$ と定義する．&lt;br /&gt;
+$\{V_x\}_{x \in U}$ は $U$ の開被覆であり，$U$ はコンパクトなので，$U = \bigcup_{i=1}^k V_{x_i}$ となる有限個の開集合 $V_{x_1}, \ldots, V_{x_k}$ が選べる．&lt;br /&gt;
+よって，$\delta&amp;rsquo;_\epsilon = \frac{1}{2} \min \{\delta_{x_1, \epsilon}, \ldots, \delta_{x_k, \epsilon} \}$ とできて，$\delta&amp;rsquo;_\epsilon &amp;gt; 0$ である．&lt;/p&gt;
+
+&lt;p&gt;$d(x, y) &amp;lt; \delta&amp;rsquo;_\epsilon$ となる任意の $x, y \in U$ を考える．&lt;br /&gt;
+コンパクト性より，ある $x_i \ (i \in \{1,\ldots, k\})$ が存在して，$x \in V_{x_i}$ である．&lt;br /&gt;
+定義より $\delta&amp;rsquo;_\epsilon \leq \frac{1}{2} \delta_{x_i, \epsilon}$ であるから，
+\begin{align}
+d(y, x_i) &amp;amp; \leq d(y, x) + d(x, x_i) &amp;lt; \delta&amp;rsquo;_\epsilon + \frac{1}{2} \delta_{x_i, \epsilon} \leq \delta_{x_i, \epsilon}
+\end{align}
+よって，$f$ の連続性から $|f(y) - f(x_i)| &amp;lt; \epsilon$ が成り立ち，
+\begin{align}
+|f(x) - f(y)| \leq |f(x) - f(x_i)| + |f(x_i) - f(y)| &amp;lt; 2\epsilon
+\end{align}
+$\epsilon$ は任意であるから，$\epsilon&amp;rsquo; = 2\epsilon$ とできる．&lt;br /&gt;
+よって，$d(x, y) &amp;lt; \delta&amp;rsquo;_{\epsilon&amp;rsquo;}$ を満たす任意の $x,y \in U$ に対して，$|f(x) - f(y)| &amp;lt; \epsilon&amp;rsquo;$ が成り立つことが証明された．&lt;/p&gt;
+
+&lt;p&gt;以上から，命題が成り立つことが証明された．&lt;/p&gt;
+
+&lt;h1 id=&#34;参考&#34;&gt;参考&lt;/h1&gt;
+
+&lt;p&gt;[1]: &lt;a href=&#34;https://www.youtube.com/watch?v=ul60goBuWfM&#34; target=&#34;_blank&#34;&gt;【VRアカデミア】距離空間と位相空間その２ 位相空間【曲直瀬おめが。】&lt;/a&gt;&lt;br /&gt;
+[2]: &lt;a href=&#34;https://www.youtube.com/watch?v=Hxe-O6gcIBg&#34; target=&#34;_blank&#34;&gt;【VRアカデミア】距離空間と位相空間その３ コンパクト性【曲直瀬おめが。】&lt;/a&gt;&lt;br /&gt;
+[3]: &lt;a href=&#34;http://www.misojiro.t.u-tokyo.ac.jp/~murota/lect-kisosuri/compactRn041202.pdf&#34; target=&#34;_blank&#34;&gt;有界閉とコンパクト pdf資料&lt;/a&gt;&lt;br /&gt;
+[4]: &lt;a href=&#34;http://www.math.chs.nihon-u.ac.jp/~ichihara/Education/Classes/14S/IntroGeom2/Geom2014note.pdf&#34; target=&#34;_blank&#34;&gt;微分幾何学講義ノート &lt;/a&gt;&lt;br /&gt;
+[5]: [位相への30講 (数学30講シリーズ)]&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Section2 answer</title>

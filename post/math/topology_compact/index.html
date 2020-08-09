@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.1.0">
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Sho Shimoyama (下山 翔)">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="はじめに 本稿では，位相空間論の中でコンパクト性に関係する内容を簡単にまとめます． 「代数幾何と学習理論（渡辺先生 著）」を読んでいる時にコンパク">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://sho-ss.github.io/post/math/topology_compact/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+  
+
+  
+  <link rel="alternate" href="https://sho-ss.github.io/index.xml" type="application/rss+xml" title="SHO SHIMOYAMA">
+  <link rel="feed" href="https://sho-ss.github.io/index.xml" type="application/rss+xml" title="SHO SHIMOYAMA">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://sho-ss.github.io/post/math/topology_compact/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="SHO SHIMOYAMA">
+  <meta property="og:url" content="https://sho-ss.github.io/post/math/topology_compact/">
+  <meta property="og:title" content="位相におけるコンパクトとは何か | SHO SHIMOYAMA">
+  <meta property="og:description" content="はじめに 本稿では，位相空間論の中でコンパクト性に関係する内容を簡単にまとめます． 「代数幾何と学習理論（渡辺先生 著）」を読んでいる時にコンパク"><meta property="og:image" content="https://sho-ss.github.io/img/icon-192.png">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-08-02T14:36:08&#43;09:00">
+  
+  <meta property="article:modified_time" content="2020-08-02T14:36:08&#43;09:00">
+  
+
+  
+
+  
+
+  <title>位相におけるコンパクトとは何か | SHO SHIMOYAMA</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">SHO SHIMOYAMA</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#experience">
+            
+            <span>Experience</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">位相におけるコンパクトとは何か</h1>
+
+  
+
+  
+    
+
+
+
+<meta content="2020-08-02 14:36:08 &#43;0900 JST" itemprop="datePublished">
+<meta content="2020-08-02 14:36:08 &#43;0900 JST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2020-08-02</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/%E4%BD%8D%E7%9B%B8/">位相</a>
+    
+  </span>
+  
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=%e4%bd%8d%e7%9b%b8%e3%81%ab%e3%81%8a%e3%81%91%e3%82%8b%e3%82%b3%e3%83%b3%e3%83%91%e3%82%af%e3%83%88%e3%81%a8%e3%81%af%e4%bd%95%e3%81%8b&amp;url=https%3a%2f%2fsho-ss.github.io%2fpost%2fmath%2ftopology_compact%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fsho-ss.github.io%2fpost%2fmath%2ftopology_compact%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fsho-ss.github.io%2fpost%2fmath%2ftopology_compact%2f&amp;title=%e4%bd%8d%e7%9b%b8%e3%81%ab%e3%81%8a%e3%81%91%e3%82%8b%e3%82%b3%e3%83%b3%e3%83%91%e3%82%af%e3%83%88%e3%81%a8%e3%81%af%e4%bd%95%e3%81%8b"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fsho-ss.github.io%2fpost%2fmath%2ftopology_compact%2f&amp;title=%e4%bd%8d%e7%9b%b8%e3%81%ab%e3%81%8a%e3%81%91%e3%82%8b%e3%82%b3%e3%83%b3%e3%83%91%e3%82%af%e3%83%88%e3%81%a8%e3%81%af%e4%bd%95%e3%81%8b"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=%e4%bd%8d%e7%9b%b8%e3%81%ab%e3%81%8a%e3%81%91%e3%82%8b%e3%82%b3%e3%83%b3%e3%83%91%e3%82%af%e3%83%88%e3%81%a8%e3%81%af%e4%bd%95%e3%81%8b&amp;body=https%3a%2f%2fsho-ss.github.io%2fpost%2fmath%2ftopology_compact%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h1 id="はじめに">はじめに</h1>
+
+<p>本稿では，位相空間論の中でコンパクト性に関係する内容を簡単にまとめます．</p>
+
+<p>「代数幾何と学習理論（渡辺先生 著）」を読んでいる時にコンパクトという単語が前半の章でちょこちょこ出現するのですが，全然イメージがつかず，イメージをつけたいなと思ったのが本稿を作成したきっかけです．</p>
+
+<p>本文では，可読性向上のため，ですます調からである調に変えます．</p>
+
+<h1 id="目次">目次</h1>
+
+<ul>
+<li><a href="#位相空間の基礎からコンパクトまで">位相空間の基礎からコンパクトまで</a>
+
+<ul>
+<li><a href="#開集合形と位相空間">開集合形と位相空間</a></li>
+<li><a href="#コンパクト">コンパクト</a></li>
+</ul></li>
+<li><a href="#コンパクトに関する種々の事柄">コンパクトに関する種々の事柄</a>
+
+<ul>
+<li><a href="#コンパクトであるでない集合の例">コンパクトである/でない集合の例</a></li>
+<li><a href="#コンパクトであることの嬉さ">コンパクトであることの嬉さ</a></li>
+</ul></li>
+<li><a href="#参考">参考</a></li>
+</ul>
+
+<h1 id="位相空間の基礎からコンパクトまで">位相空間の基礎からコンパクトまで</h1>
+
+<p>本章では，諸概念の定義をまとめる．
+[1],[2],[5]を参照した．</p>
+
+<p>なぜそのような概念を考えるのか，それがあると何が嬉しいのかについては次章以降にまとめる．</p>
+
+<h3 id="開集合形と位相空間">開集合形と位相空間</h3>
+
+<p>$X$ を集合とする．<br />
+$X$ の部分集合からなる族 $\mathcal{O}$ が開集合形であるとは次の3条件が成り立つことである．<br />
+1) $\mathcal{O}$ の元からなる族 $\{U_{\lambda}\}_{\lambda \in \Lambda}$ ($\Lambda$は添え字集合) について，
+\begin{align}
+\bigcup_{\lambda \in \Lambda} O_\lambda \in \mathcal{O}
+\end{align}
+2) $k\in \mathbb{N}$, $O_1, \ldots, O_k \in \mathcal{O}$ について，
+\begin{align}
+\bigcap_{i =1}^k O_i \in \mathcal{O}
+\end{align}
+3) $\phi$ を空集合とし，
+\begin{align}
+X, \phi \in \mathcal{O}
+\end{align}
+このとき，組 $(X, \mathcal{O})$ を位相空間，$\mathcal{O}$ の元を開集合という．</p>
+
+<h3 id="コンパクト">コンパクト</h3>
+
+<p>$(X, \mathcal{O})$ を位相空間とする．<br />
+部分集合 $F \subset X$ がコンパクトであるとは，次が成り立つことである．<br />
+$\mathcal{O}$ の元からなる族 $\{O_{\lambda}\}_{\lambda \in \Lambda}$ で $F \subset \bigcup_{\lambda \in \Lambda} O_\lambda$ となるものを選んだとき<br />
+（i.e. $\mathcal{O}$ の元からなる，$F$ の任意の開被覆 $\{O_{\lambda}\}_{\lambda \in \Lambda}$ に対して），<br />
+ある $k \in \mathbb{N}$ と $\lambda_1, \ldots, \lambda_k$ が存在して，$F \subset \bigcup_{i=1}^k O_{\lambda_i}$ が成り立つ．</p>
+
+<h1 id="コンパクトに関する種々の事柄">コンパクトに関する種々の事柄</h1>
+
+<p>この章では，コンパクトである/でない集合の具体例，コンパクトという性質が成り立つことの嬉さについてまとめる．
+[3], [4]を参照した．</p>
+
+<h2 id="コンパクトである-でない集合の例">コンパクトである/でない集合の例</h2>
+
+<p><strong>1)</strong> $X = \{ \frac{1}{n} | n \in \mathbb{N} \} \cup \{0\}$ はコンパクト．<br />
+<strong>証明</strong>： $X$ の任意の開被覆を $\{O_\lambda\}_{\lambda \in \Lambda}$（$O_\lambda \subset \mathbb{R}$）とおく．<br />
+ある $\lambda_0$ が存在して，$0 \in O_{\lambda_0}$ が成り立つ．<br />
+$O_{\lambda_0}$ は開集合なので，ある $\delta &gt; 0$ が存在して，$(-\delta, \delta) \subset O_{\lambda_0}$．<br />
+$k \in \mathcal{N}$ を $\frac{1}{k} &lt; \delta$ となるように取れば，$n \geq k$ に対して，$\frac{1}{n} \in O_{\lambda_0}$．<br />
+$n \leq k - 1$に対して，各 $n$ に対しある $\lambda_n$ が存在して $\frac{1}{n} \in O_{\lambda_n}$ が成り立つ．<br />
+したがって，$X$ は有限個の開集合 $O_{\lambda_0}, O_{\lambda_1}, \ldots, O_{\lambda_{k-1}}$ で覆うことができるので，コンパクトである．</p>
+
+<p><strong>2)</strong> $\mathbb{R}$はコンパクトでない．<br />
+<strong>証明</strong>： $O_r = (-|r|, |r|)$ とすると，$\bigcup_{r \in \mathbb{R}} O_r$ は $\mathbb{R}$ の開被覆である．<br />
+$\mathbb{R}$ がコンパクトであるとすると，$\mathbb{R} = \bigcup_{i=1}^k O_{r_i}$ となる有限個の開集合 $O_{r_1}, \ldots, O_{r_k}$ が存在する．<br />
+$k$ は有限なので添え字の最大値が取れて，それを $r&rsquo; = \max \{r_1, \ldots, r_k\}$ とする．<br />
+このとき，$\mathbb{R} = \bigcup_{i=1}^k O_{r_i} = (-|r&rsquo;|, |r&rsquo;|)$ となり矛盾する．<br />
+よって，$\mathbb{R}$ はコンパクトでない．</p>
+
+<h2 id="コンパクトであることの嬉さ">コンパクトであることの嬉さ</h2>
+
+<p>コンパクト集合上の関数に対して次の2つが成り立つ[3]．</p>
+
+<ul>
+<li>コンパクト集合上の連続関数は最大値と最小値を持つ</li>
+<li>コンパクト集合上の連続関数は一様連続である</li>
+</ul>
+
+<p>また，歴史的な背景としても，閉区間上の関数は一様連続であることを証明するためにコンパクト性が用いられたようである[4]．</p>
+
+<h3 id="コンパクト集合上の連続関数は最大値と最小値を持つ-の証明">「コンパクト集合上の連続関数は最大値と最小値を持つ」の証明</h3>
+
+<p>$X$ をコンパクトな集合，$X$ 上の実数値連続関数を $f:X \to \mathbb{R}$ とする．<br />
+\begin{align}
+U_r = f^{-1}\left( ( -|r| - 1, |r| + 1) \right) = \left\{x \in X | f(x) \in ( -|r| - 1, |r| + 1)\right\}
+\end{align}
+とすると，$f$ は連続であるので $U_r$ は開集合である．<br />
+したがって，$\{U_r\}_{r \in \mathbb{R}}$ は $X$ の開被覆である．<br />
+$X$ はコンパクトなので，有限個の $U_{r_1}, \ldots, U_{r_k}$ が存在し，$X \subset \bigcup_{i = 1}^k U_{r_i}$ とできる．<br />
+したがって，
+\begin{align}
+f(X) \subset f\left( \bigcup_{i = 1}^k U_{r_i} \right) = \left( - \max_i |r_i| - 1, \max_i |r_i| + 1 \right)
+\end{align}
+となり，$f(X)$は有界集合である．</p>
+
+<p>Weierstrassの上限・下限の存在定理から，$f(X)$ は上限 $\sup f(X) = M$ と下限 $\inf f(X) = m$ を持つ．<br />
+$F_n = f^{-1} \left([M - \frac{1}{n}, M] \right)$ と定義すると，上限の定義から $M - \frac{1}{n} &lt; f(x) \leq M$ を満たす $x \in X$ が存在するので，$F_n \neq \phi$．<br />
+$f$ は連続関数なので $F_n$ は閉集合である．<br />
+そして，$F_1 \supset F_2 \supset \cdots \supset F_n$ より，$\bigcap_{i=1}^n F_i \neq \phi$（i.e. 有限交叉性を満たす）．<br />
+コンパクト集合であることと，閉集合の族 $\{F_n\}_{n \in \mathbb{N}}$ が有限交叉性を満たすならば $\bigcap_{n \in \mathbb{N}} F_n \neq \phi$が成り立つことは同値である（後述）．<br />
+したがって，任意の $n$ に対して，$M - \frac{1}{n} &lt; f(x) \leq M$ を満たす $x \in X$ が存在するので，$M$ は最大値である．<br />
+最小値に対しても同様の議論で証明できる．</p>
+
+<h4 id="コンパクトと有限交叉性に関して">コンパクトと有限交叉性に関して</h4>
+
+<p>次の2つは同値である．</p>
+
+<ol>
+<li>$(X, \mathcal{O})$ を位相空間とする．$X$ はコンパクトである．</li>
+<li>$(X, \mathcal{O})$ を位相空間とする．$(X, \mathcal{O})$ 上の閉集合の族 $\{F\}_{F \in \mathcal{F}}$ が有限性を持つならば $\bigcap_{F \in \mathcal{F}} F \neq \phi$</li>
+</ol>
+
+<p><strong>$1 \Rightarrow 2$ の証明</strong>：$\{F\}_{F \in \mathcal{F}}$ が有限交叉性を持つとする．<br />
+$\bigcap_{F \in \mathcal{F}} F = \phi$ であるなら，
+\begin{align}
+X = X \setminus \bigcap_{F \in \mathcal{F}} F = \bigcup_{F \in \mathcal{F}} F^c
+\end{align}
+ただし，$F^c = X \setminus F$．<br />
+$F^c$ は開集合であるので，$\bigcup_{F \in \mathcal{F}} F^c$ は $X$ の開被覆である．<br />
+$X$ はコンパクトなので，有限個の $F_1^c, \ldots, F_k^c$ が選べて，$X = \bigcup_{i=1}^k F_i^c$ とできる．<br />
+よって，
+\begin{align}
+\phi = X \setminus \bigcup_{i=1}^k F_i^c = \bigcap_{i=1}^k F_i
+\end{align}
+が成り立つ．<br />
+これは，$\{F\}_{F \in \mathcal{F}}$ が有限交叉性を持つことと矛盾する．<br />
+したがって，$\bigcap_{F \in \mathcal{F}} F \neq \phi$．</p>
+
+<p><strong>$2 \Rightarrow 1$ の証明</strong>：$X$ の開被覆を $\{O_\lambda\}_{\lambda \in \Lambda}$ とする．<br />
+2 が成り立つことから，その対偶も成り立つ．すなわち，$\bigcap_{F \in \mathcal{F}} F = \phi$ なら，ある有限個の閉集合 $F_1, \ldots, F_k$ が存在して，$\bigcap_{i=1}^k F_i = \phi$ とできる．<br />
+\begin{align}
+\phi = X \setminus \bigcup_{\lambda \in \Lambda} O_\lambda = \bigcap_{\lambda \in \Lambda} O_\lambda^c
+\end{align}
+より，$\bigcap_{i=1}^k O_{\lambda_i}^c = \phi$ となる，ある有限個の $O_{\lambda_1}^c, \ldots, O_{\lambda_k}^c$ が存在する．<br />
+よって，
+\begin{align}
+X = X \setminus \bigcap_{i=1}^k O_{\lambda_i}^c = \bigcup_{i=1}^k O_{\lambda_i}
+\end{align}
+が成り立つ．<br />
+∴ $X$ はコンパクトである．</p>
+
+<h3 id="コンパクト集合上の連続関数は一様連続である-の証明">「コンパクト集合上の連続関数は一様連続である」の証明</h3>
+
+<p>ここでは，距離空間上での証明を行う．<br />
+位相空間上で一様連続を定義するためには，空間の位相構造だけでは不十分で，一様構造という構造をいれる必要があるらしい．<a href="http://www12.plala.or.jp/echohta/top/QA/QA010.html#01097" target="_blank">参考</a>．</p>
+
+<p>$(X, d)$ を距離空間，$U \subset X$ を $X$ のコンパクトな部分集合，$f: U \to \mathbb{R}$ を $U$ 上の実数値連続関数とする．<br />
+まず，連続関数と一様連続の定義を示す．</p>
+
+<p><strong>一様連続</strong><br />
+ある部分集合 $V$ 上の実数値関数 $f: V \to \mathbb{R}$ が一様連続であるとは，次が成り立つことである．<br />
+$\forall \epsilon &gt; 0$ に対しある $\delta_\epsilon &gt; 0$ が存在して，$d(x, y) &lt; \delta_\epsilon$ を満たす任意の $x, y \in V$ に対して $|f(x) - f(y)| &lt; \delta_\epsilon $ とできる．</p>
+
+<p><strong>連続</strong><br />
+ある部分集合 $V$ 上の実数値関数 $f: V \to \mathbb{R}$ が連続であるとは，次が成り立つことである．<br />
+$\forall x \in V$ と $\forall \epsilon &gt; 0$ に対しある $\delta_{x, \epsilon} &gt; 0$ が存在して，$d(x, y) &lt; \delta_{x, \epsilon}$ を満たす任意の $y \in V$ に対して $|f(x) - f(y)| &lt; \epsilon $ とできる．</p>
+
+<p>連続は $x$ に依存しているが，一様連続は $x$ と $y$ の距離にのみ依存している．</p>
+
+<p><strong>命題の証明</strong>： 任意の $\epsilon &gt; 0$ と各 $x \in U$ に対して $V_x = \{ y \in U | d(x, y) &lt; \frac{1}{2} \delta_{x, \epsilon} \}$ と定義する．<br />
+$\{V_x\}_{x \in U}$ は $U$ の開被覆であり，$U$ はコンパクトなので，$U = \bigcup_{i=1}^k V_{x_i}$ となる有限個の開集合 $V_{x_1}, \ldots, V_{x_k}$ が選べる．<br />
+よって，$\delta&rsquo;_\epsilon = \frac{1}{2} \min \{\delta_{x_1, \epsilon}, \ldots, \delta_{x_k, \epsilon} \}$ とできて，$\delta&rsquo;_\epsilon &gt; 0$ である．</p>
+
+<p>$d(x, y) &lt; \delta&rsquo;_\epsilon$ となる任意の $x, y \in U$ を考える．<br />
+コンパクト性より，ある $x_i \ (i \in \{1,\ldots, k\})$ が存在して，$x \in V_{x_i}$ である．<br />
+定義より $\delta&rsquo;_\epsilon \leq \frac{1}{2} \delta_{x_i, \epsilon}$ であるから，
+\begin{align}
+d(y, x_i) &amp; \leq d(y, x) + d(x, x_i) &lt; \delta&rsquo;_\epsilon + \frac{1}{2} \delta_{x_i, \epsilon} \leq \delta_{x_i, \epsilon}
+\end{align}
+よって，$f$ の連続性から $|f(y) - f(x_i)| &lt; \epsilon$ が成り立ち，
+\begin{align}
+|f(x) - f(y)| \leq |f(x) - f(x_i)| + |f(x_i) - f(y)| &lt; 2\epsilon
+\end{align}
+$\epsilon$ は任意であるから，$\epsilon&rsquo; = 2\epsilon$ とできる．<br />
+よって，$d(x, y) &lt; \delta&rsquo;_{\epsilon&rsquo;}$ を満たす任意の $x,y \in U$ に対して，$|f(x) - f(y)| &lt; \epsilon&rsquo;$ が成り立つことが証明された．</p>
+
+<p>以上から，命題が成り立つことが証明された．</p>
+
+<h1 id="参考">参考</h1>
+
+<p>[1]: <a href="https://www.youtube.com/watch?v=ul60goBuWfM" target="_blank">【VRアカデミア】距離空間と位相空間その２ 位相空間【曲直瀬おめが。】</a><br />
+[2]: <a href="https://www.youtube.com/watch?v=Hxe-O6gcIBg" target="_blank">【VRアカデミア】距離空間と位相空間その３ コンパクト性【曲直瀬おめが。】</a><br />
+[3]: <a href="http://www.misojiro.t.u-tokyo.ac.jp/~murota/lect-kisosuri/compactRn041202.pdf" target="_blank">有界閉とコンパクト pdf資料</a><br />
+[4]: <a href="http://www.math.chs.nihon-u.ac.jp/~ichihara/Education/Classes/14S/IntroGeom2/Geom2014note.pdf" target="_blank">微分幾何学講義ノート </a><br />
+[5]: [位相への30講 (数学30講シリーズ)]</p>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+  
+  <a class="badge badge-light" href="/tags/%E4%BD%8D%E7%9B%B8/">位相</a>
+  
+</div>
+
+
+
+
+    
+      
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  
+  <img class="portrait mr-3" src="/author/admin/avatar_hu894bb7b7e3238f5a73b32bc7c7112a13_77359_250x250_fill_q90_lanczos_center.jpg" itemprop="image" alt="Avatar">
+  
+
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/authors/admin">Sho Shimoyama (下山 翔)</a></h5>
+    
+    <p class="card-text" itemprop="description">My interests include bayesian inference, information geometry and Mathematics</p>
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/shoshimo_" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/sho-ss" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+      
+      
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.d7381f2d79e6271d4da28f474f49096c.js"></script>
+
+  </body>
+</html>
+

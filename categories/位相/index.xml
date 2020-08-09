@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>位相 on SHO SHIMOYAMA</title>
+    <link>https://sho-ss.github.io/categories/%E4%BD%8D%E7%9B%B8/</link>
+    <description>Recent content in 位相 on SHO SHIMOYAMA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Aug 2020 14:36:08 +0900</lastBuildDate>
+    
+	<atom:link href="https://sho-ss.github.io/categories/%E4%BD%8D%E7%9B%B8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>位相におけるコンパクトとは何か</title>
+      <link>https://sho-ss.github.io/post/math/topology_compact/</link>
+      <pubDate>Sun, 02 Aug 2020 14:36:08 +0900</pubDate>
+      
+      <guid>https://sho-ss.github.io/post/math/topology_compact/</guid>
+      <description>はじめに 本稿では，位相空間論の中でコンパクト性に関係する内容を簡単にまとめます． 「代数幾何と学習理論（渡辺先生 著）」を読んでいる時にコンパク</description>
+    </item>
+    
+  </channel>
+</rss>
